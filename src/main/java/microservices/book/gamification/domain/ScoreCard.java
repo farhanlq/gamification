@@ -30,7 +30,7 @@ public class ScoreCard {
 	public ScoreCard() {
 	}
 
-	public ScoreCard(Long cardId, Long userId, Long attemptId, long scoreTimeStamp, int score) {
+	public ScoreCard(Long userId, Long attemptId) {
 		this.cardId = null;
 		this.userId = userId;
 		this.attemptId = attemptId;
