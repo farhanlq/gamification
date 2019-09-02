@@ -5,16 +5,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import microservices.book.gamification.client.MultiplicationResultAttempt;
+import microservices.book.gamification.client.MultiplicationResultAttemptClient;
 
 @Component
-public class MultiplicationResultAttemptImpl implements MultiplicationResultAttempt {
+public class MultiplicationResultAttemptClientImpl implements MultiplicationResultAttemptClient {
 
 	private RestTemplate restTemplate;
 	private String multiplicationHost;
 
 	@Autowired
-	public MultiplicationResultAttemptImpl(RestTemplate restTemplate,
+	public MultiplicationResultAttemptClientImpl(RestTemplate restTemplate,
 			@Value("${multiplicationHost}") String multiplicationHost) {
 		this.restTemplate = restTemplate;
 		this.multiplicationHost = multiplicationHost;

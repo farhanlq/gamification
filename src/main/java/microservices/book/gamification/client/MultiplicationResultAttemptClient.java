@@ -1,6 +1,8 @@
 package microservices.book.gamification.client;
 
-public interface MultiplicationResultAttempt {
+import microservices.book.gamification.client.dto.MultiplicationResultAttempt;
+
+public interface MultiplicationResultAttemptClient {
 
 	MultiplicationResultAttempt retrieveMultiplicationResultAttemptbyId(Long multiplicationId);
 }
