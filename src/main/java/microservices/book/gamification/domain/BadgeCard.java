@@ -22,7 +22,7 @@ public class BadgeCard {
 	public BadgeCard() {
 	}
 
-	public BadgeCard(Long badgeId, Long userId,  Badge badge) {
+	public BadgeCard(Long userId,  Badge badge) {
 		this.badgeId = null;
 		this.userId = userId;
 		this.badgeTimeStamp = System.currentTimeMillis();
