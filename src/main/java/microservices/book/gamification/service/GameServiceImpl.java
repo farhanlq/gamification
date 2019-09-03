@@ -77,7 +77,7 @@ public class GameServiceImpl implements GameService {
 
 		// Lucky Number Badge
 		MultiplicationResultAttempt attempt = attemptClient.retrieveMultiplicationResultAttemptbyId(attemptId);
-		if (containsBadge(badgeCardList, Badge.LUCKY_NUMBER) && (LUCKY_NUMBER == attempt.getMulitplicationFactorA()
+		if (!containsBadge(badgeCardList, Badge.LUCKY_NUMBER) && (LUCKY_NUMBER == attempt.getMulitplicationFactorA()
 				|| LUCKY_NUMBER == attempt.getMultiplicationFactorB())) {
 			BadgeCard luckyNumberBadge = giveBadgeToUser(Badge.LUCKY_NUMBER, userId);
 			badgeCards.add(luckyNumberBadge);
