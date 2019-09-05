@@ -1,6 +1,7 @@
 package microservices.book.gamification.domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class GameStats {
@@ -29,10 +30,6 @@ public class GameStats {
 
 	public int getScore() {
 		return score;
-	}
-
-	public List<Badge> getBadges() {
-		return badges;
 	}
 
 	@Override
@@ -72,6 +69,14 @@ public class GameStats {
 	@Override
 	public String toString() {
 		return "GameStats [userId=" + userId + ", score=" + score + ", badges=" + badges + "]";
+	}
+
+	public static GameStats emptyStats(final Long userId) {
+		return new GameStats(userId, 0, Collections.emptyList());
+	}
+
+	public List<Badge> getBadges() {
+		return Collections.unmodifiableList(badges);
 	}
 
 }
