@@ -10,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import microservices.book.gamification.client.MultiplicationResultAttemptClient;
+import microservices.book.gamification.client.dto.MultiplicationResultAttempt;
 import microservices.book.gamification.dao.BadgeCardRepository;
 import microservices.book.gamification.dao.ScoreCardRepository;
 import microservices.book.gamification.domain.Badge;
@@ -24,12 +26,13 @@ public class GameServiceImpl implements GameService {
 
 	public static final int LUCKY_NUMBER = 42;
 
-	@Autowired
 	private ScoreCardRepository scoreCardRepository;
-	@Autowired
-	private BadgeCardRepository badgeCardRepository;
-	// private MultiplicationResultAttemptClient attemptClient;
 
+	private BadgeCardRepository badgeCardRepository;
+
+	private MultiplicationResultAttemptClient attemptClient;
+
+	@Autowired
 	GameServiceImpl(ScoreCardRepository scoreCardRepository, BadgeCardRepository badgeCardRepository,
 			MultiplicationResultAttemptClient attemptClient) {
 		this.scoreCardRepository = scoreCardRepository;
